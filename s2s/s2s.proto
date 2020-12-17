@@ -6,7 +6,10 @@ enum MessageCmd //枚举消息类型
 {
   NULL = 0;
   GetUID = 1;
-  GetUIDList = 2;
+  GetUIDs = 2;
+  ValidToken = 3;
+  GetUser = 4;
+  GetWallet = 5;
 }
 
 enum ErrorCode {
@@ -18,7 +21,7 @@ message Result {
   string msg=2;
 }
 
-
+//snowflake proto
 message GenUIDReq {
   int32 channel = 1;
 }
@@ -36,5 +39,55 @@ message GenUIDsReq {
 message GenUIDsResp {
    Result result = 1;
    repeated uint64 uids = 2;
+}
 
+//usercenter proto
+
+message ValidTokenReq {
+   string appid = 1;
+   string token = 2;
+}
+
+message ValidTokenResp {
+  Result result = 1;
+}
+
+message User {
+  uint64 uid= 1;
+	string appid= 2;
+	string openid= 3;
+	string uuid= 4;
+	string name= 5;
+	string channel= 6;
+	string avatar= 7;
+	string password= 8;
+	string phone= 9;
+	int32 gender= 10;
+	int32 age= 11;
+	uint64 gold= 12;
+	uint64 coin= 13;
+	string loginAt= 14;
+	string loginIP= 15;
+	string createAt= 16;
+	int32 status= 17;
+}
+
+message GetUserReq {
+  uint64 uid =1;
+}
+
+message GetUserResp {
+  Result result = 1;
+  User user = 2;
+}
+
+message GetWalletReq {
+  uint64 uid=1;
+}
+
+message GetWalletResp {
+  Result result = 1;
+  uint64 uid = 2;
+  uint64 gold = 3;
+  uint64 coin = 4;
 }
