@@ -69,7 +69,8 @@ message User {
 	string loginAt= 14;
 	string loginIP= 15;
 	string createAt= 16;
-	int32 status= 17;
+  int32 status= 17;
+  string token = 18;
 }
 
 message GetUserReq {
