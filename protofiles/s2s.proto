@@ -62,15 +62,18 @@ message User {
 	string avatar= 7;
 	string password= 8;
 	string phone= 9;
-	int32 gender= 10;
-	int32 age= 11;
-	uint64 gold= 12;
-	uint64 coin= 13;
-	string loginAt= 14;
-	string loginIP= 15;
-	string createAt= 16;
-  int32 status= 17;
-  string token = 18;
+  string account = 10;
+  string email = 11;
+	int32 gender= 12;
+	int32 age= 13;
+  int64 money= 14;
+	int64 gold= 15;
+	int64 coin= 16;
+	string loginAt= 17;
+	string loginIP= 18;
+	string createAt= 19;
+  int32 status= 20;
+  string token = 21;
 }
 
 message GetUserReq {
