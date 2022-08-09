@@ -5,11 +5,13 @@ option go_package = "./;s2s";
 enum MessageCmd //枚举消息类型
 {
   NULL = 0;
-  GetUID = 1;
-  GetUIDs = 2;
-  ValidToken = 3;
-  GetUser = 4;
-  GetWallet = 5;
+  AUTH = 1;
+  HEARTBEAT = 2;
+  GetUID = 3;
+  GetUIDs = 4;
+  ValidToken = 5;
+  GetUser = 6;
+  GetWallet = 7;
 }
 
 enum ErrorCode {
@@ -19,6 +21,13 @@ enum ErrorCode {
 message Result {
   int32 code=1;
   string msg=2;
+  int64  time=3;
+}
+
+message HeartBeatReq {
+}
+message HeartBeatResp {
+  Result result = 1;
 }
 
 //snowflake proto
