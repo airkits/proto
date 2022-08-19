@@ -10,8 +10,13 @@ message Message{
   uint32 msgID = 3;
   uint32 msgType = 4;
   uint32 seq = 5;
-  map<string,  bytes> options =  6;
-  google.protobuf.Any body = 11;
+  uint32 srcType = 6;
+  uint32 srcID = 7;
+  uint32 destType =8;
+  uint32 destID =9;
+  uint64 time = 10;
+  map<string,  bytes> options =  11;
+  google.protobuf.Any body = 20;
 }
 
 service RPC {
