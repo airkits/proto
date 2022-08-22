@@ -15,8 +15,7 @@ message Message{
   uint32 destType =8;
   uint32 destID =9;
   uint64 time = 10;
-  option string subject = 11;
-  option string reply = 12;
+  string reply = 11;
   map<string,  bytes> options =  13;
   google.protobuf.Any body = 20;
 }
