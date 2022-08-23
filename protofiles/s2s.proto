@@ -32,6 +32,11 @@ message HeartBeatResp {
    int64  time=2;
 }
 
+message ErrorResp {
+  Result result = 1;
+   int64  time=2;
+}
+
 //snowflake proto
 message GenUIDReq {
   int32 channel = 1;

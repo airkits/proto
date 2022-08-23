@@ -3,7 +3,7 @@
 ## win10
 
 ```
-go get -u google.golang.org/protobuf/protoc-gen-go
+go install github.com/golang/protobuf/protoc-gen-go@v1.4.3
 download protoc from https://github.com/protocolbuffers/protobuf/releases
 
 ```
@@ -18,7 +18,7 @@ source ~/.profile
 
 curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
-go install google.golang.org/protobuf/protoc-gen-go
+go install github.com/golang/protobuf/protoc-gen-go@v1.4.3
 
 
 // install protoc
