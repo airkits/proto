@@ -5,13 +5,14 @@ option go_package = "./;s2s";
 enum MessageCmd //枚举消息类型
 {
   NULL = 0;
-  AUTH = 1;
-  HEARTBEAT = 2;
-  GetUID = 3;
-  GetUIDs = 4;
-  ValidToken = 5;
-  GetUser = 6;
-  GetWallet = 7;
+  AUTH = 100;
+  ERROR = 101;
+  HEARTBEAT = 102;
+  GetUID = 1000;
+  GetUIDs = 1001;
+  ValidToken = 1002;
+  GetUser = 1003;
+  GetWallet = 1004;
 }
 
 enum ErrorCode {
