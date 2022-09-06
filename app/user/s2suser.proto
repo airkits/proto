@@ -1,0 +1,70 @@
+syntax = "proto3";
+package s2s;
+option go_package = "./;s2s";
+import "protofiles/s2s.proto";
+
+// server  <-> server  10000 - 19999
+enum UserCmd //枚举消息类型
+{
+  None = 0;
+  ValidToken = 10000;
+  GetUser = 10001;
+  GetWallet = 10002;
+}
+
+
+
+//usercenter proto
+
+message ValidTokenReq {
+   string appid = 1;
+   string token = 2;
+}
+
+message ValidTokenResp {
+  s2s.Result result = 1;
+}
+
+message User {
+  uint64 uid= 1;
+	string appid= 2;
+	string openid= 3;
+	string uuid= 4;
+	string name= 5;
+	string channel= 6;
+	string avatar= 7;
+	string password= 8;
+	string phone= 9;
+  string account = 10;
+  string email = 11;
+	int32 gender= 12;
+	int32 age= 13;
+  int64 money= 14;
+	int64 gold= 15;
+	int64 coin= 16;
+	string loginAt= 17;
+	string loginIP= 18;
+	string createAt= 19;
+  int32 status= 20;
+  string token = 21;
+}
+
+message GetUserReq {
+  uint64 uid =1;
+}
+
+message GetUserResp {
+  s2s.Result result = 1;
+  User user = 2;
+}
+
+message GetWalletReq {
+  uint64 uid=1;
+}
+
+message GetWalletResp {
+  s2s.Result result = 1;
+  uint64 uid = 2;
+  uint64 gold = 3;
+  uint64 coin = 4;
+}
